@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مالمیر | طراحی پوستر و تبلیغات</title>
+
+<style>
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:#fff;
+  font-family:Tahoma,Arial,sans-serif;
+  font-size:18px;
+  background:
+    radial-gradient(circle at 50% 0%,#124b78 0%,#071a2b 35%,#03080e 100%);
+}
+
+/* ===== هدر ===== */
+
+header{
+  text-align:center;
+  padding:42px 15px;
+  background:linear-gradient(135deg,#061d32,#0b4d78,#061525);
+  border-bottom:2px solid #24aef5;
+  box-shadow:0 5px 30px rgba(0,160,255,.2);
+}
+
+header h1{
+  margin:0;
+  font-size:44px;
+  font-weight:900;
+  color:#5acbff;
+  text-shadow:0 0 20px rgba(42,185,255,.35);
+}
+
+header p{
+  font-size:22px;
+  font-weight:bold;
+  line-height:1.8;
+  margin:12px 0 18px;
+}
+
+.main-order{
+  display:inline-block;
+  padding:15px 30px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#26bbff,#0874c1);
+  color:white;
+  text-decoration:none;
+  font-size:21px;
+  font-weight:900;
+  box-shadow:0 7px 25px rgba(0,150,255,.3);
+}
+
+/* ===== کادرهای تبلیغاتی ===== */
+
+.quick-ads{
+  width:94%;
+  max-width:850px;
+  margin:25px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.quick-ad{
+  display:block;
+  padding:15px 10px;
+  text-align:center;
+  border-radius:15px;
+  background:linear-gradient(135deg,#09243a,#0d4c75);
+  border:1px solid #168fd4;
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:900;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  transition:.25s;
+}
+
+.quick-ad:hover{
+  transform:translateY(-3px);
+  border-color:#5acbff;
+}
+
+.quick-ad span{
+  display:block;
+  color:#5acbff;
+  font-size:21px;
+  margin-bottom:6px;
+}
+
+/* ===== عطر بهشت ===== */
+
+.mini-behesht-ad{
+  width:92%;
+  max-width:600px;
+  margin:22px auto;
+  padding:12px 15px;
+
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  background:linear-gradient(135deg,#071a2b,#0b4168,#082238);
+
+  border:2px solid #168bd0;
+  border-radius:17px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.35),
+    0 0 18px rgba(0,160,255,.12);
+}
+
+.mini-behesht-ad img{
+  width:85px;
+  height:85px;
+  object-fit:cover;
+  border-radius:12px;
+  border:2px solid #45c5ff;
+}
+
+.mini-behesht-info{
+  flex:1;
+  text-align:right;
+}
+
+.mini-behesht-info b{
+  display:block;
+  color:#5bcaff;
+  font-size:21px;
+  font-weight:900;
+}
+
+.mini-behesht-info span{
+  display:block;
+  margin-top:7px;
+  font-size:15px;
+  color:#eee;
+  line-height:1.7;
+}
+
+/* ===== نمونه کارها ===== */
+
+.portfolio,
+.profile-portfolio{
+  width:94%;
+  max-width:850px;
+  margin:50px auto;
+  text-align:center;
+}
+
+.portfolio h2,
+.profile-portfolio h2{
+  margin:0;
+  font-size:35px;
+  color:#5acbff;
+  text-shadow:0 0 15px rgba(40,180,255,.25);
+}
+
+.portfolio p,
+.profile-portfolio p{
+  font-size:20px;
+  font-weight:bold;
+  color:#ddd;
+  margin:12px 0 25px;
+}
+
+/* ===== اسلایدر ===== */
+
+.portfolio-slider,
+.profile-slider{
+  width:100%;
+  max-width:650px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:23px;
+  border:2px solid #168bd0;
+  background:#06111c;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.5),
+    0 0 25px rgba(0,153,255,.12);
+}
+
+.profile-slider{
+  max-width:600px;
+}
+
+.portfolio-slide,
+.profile-slide{
+  display:none;
+  animation:slideIn .7s ease;
+}
+
+.portfolio-slide.active,
+.profile-slide.active{
+  display:block;
+}
+
+.portfolio-slide img,
+.profile-slide img{
+  display:block;
+  width:100%;
+  height:390px;
+  object-fit:cover;
+}
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateX(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+.portfolio-caption{
+  padding:15px;
+  background:linear-gradient(135deg,#071b2c,#0b395c);
+  color:white;
+  font-size:21px;
+  font-weight:900;
+}
+
+/* ===== نقاط ===== */
+
+.slider-dots,
+.profile-dots{
+  text-align:center;
+  margin-top:14px;
+}
+
+.dot,
+.profile-dot{
+  display:inline-block;
+  width:11px;
+  height:11px;
+  margin:0 5px;
+  border-radius:50%;
+  background:#456579;
+}
+
+.dot.active,
+.profile-dot.active{
+  background:#35baff;
+  box-shadow:0 0 10px #35baff;
+}
+
+/* ===== بنر تبلیغ ===== */
+
+.message-banner{
+  width:92%;
+  max-width:700px;
+  margin:30px auto;
+  padding:18px;
+  text-align:center;
+  border-radius:18px;
+
+  background:linear-gradient(135deg,#082943,#0c5a8c,#082039);
+
+  border:1px solid #22aaf0;
+  box-shadow:0 7px 25px rgba(0,0,0,.3);
+}
+
+.message-banner strong{
+  display:block;
+  font-size:23px;
+  color:#5bcaff;
+  margin-bottom:7px;
+}
+
+.message-banner span{
+  font-size:17px;
+  font-weight:bold;
+  color:#eee;
+}
+
+.message-banner a{
+  display:inline-block;
+  margin-top:12px;
+  padding:9px 18px;
+  background:#1199df;
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== سفارش ===== */
+
+.order-section{
+  width:94%;
+  max-width:700px;
+  margin:45px auto;
+  padding:30px 20px;
+  text-align:center;
+
+  background:linear-gradient(135deg,#071827,#0d3555,#07111b);
+
+  border:2px solid #168bd0;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.order-section h2{
+  margin-top:0;
+  font-size:32px;
+  color:#55c7ff;
+}
+
+.order-section p{
+  font-size:20px;
+  font-weight:bold;
+  line-height:2;
+}
+
+.phone{
+  display:block;
+  color:white;
+  text-decoration:none;
+  font-size:25px;
+  font-weight:900;
+  margin:18px 0;
+}
+
+.rubika{
+  display:inline-block;
+  padding:15px 28px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#25b8ff,#0878c9);
+  color:white;
+  text-decoration:none;
+  font-size:21px;
+  font-weight:900;
+}
+
+/* ===== فوتر ===== */
+
+footer{
+  text-align:center;
+  padding:28px 10px;
+  background:#03070c;
+  border-top:1px solid #168bd0;
+  font-size:18px;
+  font-weight:bold;
+  line-height:2;
+}
+
+footer strong{color:#55c7ff}
+
+/* ===== موبایل ===== */
+
+@media(max-width:650px){
+
+  header{padding:32px 12px}
+
+  header h1{font-size:35px}
+
+  header p{font-size:18px}
+
+  .main-order{
+    font-size:19px;
+    padding:13px 22px;
+  }
+
+  .quick-ads{
+    grid-template-columns:1fr;
+    width:90%;
+  }
+
+  .quick-ad{padding:13px}
+
+  .mini-behesht-ad{
+    width:94%;
+    padding:10px;
+  }
+
+  .mini-behesht-ad img{
+    width:75px;
+    height:75px;
+  }
+
+  .mini-behesht-info b{
+    font-size:18px;
+  }
+
+  .mini-behesht-info span{
+    font-size:13px;
+  }
+
+  .portfolio h2,
+  .profile-portfolio h2{
+    font-size:29px;
+  }
+
+  .portfolio p,
+  .profile-portfolio p{
+    font-size:18px;
+  }
+
+  .portfolio-slide img,
+  .profile-slide img{
+    height:340px;
+  }
+
+  .portfolio-caption{
+    font-size:19px;
+    padding:13px;
+  }
+
+  .order-section h2{font-size:28px}
+
+  .order-section p{font-size:18px}
+}
+
+@media(max-width:400px){
+
+  .mini-behesht-ad img{
+    width:68px;
+    height:68px;
+  }
+
+  .mini-behesht-info b{
+    font-size:16px;
+  }
+
+  .mini-behesht-info span{
+    font-size:11px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== هدر ===== -->
+
+<header>
+
+  <h1>✨ مالمیر ✨</h1>
+
+  <p>
+    طراحی پوستر و تبلیغات حرفه‌ای برای کسب‌وکار شما
+  </p>
+
+  <a
+    class="main-order"
+    href="https://rubika.ir/kmkasra10"
+    target="_blank">
+
+    📲 ثبت سفارش در روبیکا
+
+  </a>
+
+</header>
+
+
+<!-- ===== تبلیغات کوچک ===== -->
+
+<div class="quick-ads">
+
+  <a class="quick-ad"
+     href="https://rubika.ir/kmkasra10"
+     target="_blank">
+
+    <span>📢</span>
+    تبلیغ شما؟
+    <br>
+    برای تبلیغ پیام دهید
+
+  </a>
+
+  <a class="quick-ad"
+     href="https://rubika.ir/kmkasra10"
+     target="_blank">
+
+    <span>🎨</span>
+    پوستر لازم داری؟
+    <br>
+    سفارش دهید
+
+  </a>
+
+  <a class="quick-ad"
+     href="https://rubika.ir/kmkasra10"
+     target="_blank">
+
+    <span>✨</span>
+    طراحی اختصاصی
+    <br>
+    برای کسب‌وکار شما
+
+  </a>
+
+</div>
+
+
+<!-- ===== تبلیغ عطر بهشت ===== -->
+
+<div class="mini-behesht-ad">
+
+  <img
+    src="https://uploadkon.ir/uploads/5ec901_2617856007292704261663286715707238.jpg"
+    alt="عطر بهشت">
+
+  <div class="mini-behesht-info">
+
+    <b>✨ عطر بهشت</b>
+
+    <span>
+      عطر و ادکلن | نهاوند
+      <br>
+      📍 خیابان ابوذر، روبه‌روی بانک ملت
+    </span>
+
+  </div>
+
+</div>
+
+
+<!-- ===== نمونه طراحی تبلیغاتی ===== -->
+
+<section class="portfolio">
+
+  <h2>🎨 نمونه طراحی‌های تبلیغاتی</h2>
+
+  <p>چند نمونه از طراحی‌های مالمیر</p>
+
+  <div class="portfolio-slider">
+
+    <div class="portfolio-slide active">
+
+      <img
+        src="https://uploadkon.ir/uploads/a03c01_26گردشگری-ارزان-برای-سایت.jpg"
+        alt="نمونه طراحی تبلیغ گردشگری">
+
+      <div class="portfolio-caption">
+        🏞️ طراحی تبلیغ گردشگری
+      </div>
+
+    </div>
+
+    <div class="portfolio-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/f40b01_26Dairy-advertising-tract0310-cafeegraphic.jpg"
+        alt="نمونه طراحی تبلیغ لبنیاتی">
+
+      <div class="portfolio-caption">
+        🥛 طراحی تبلیغاتی لبنیاتی
+      </div>
+
+    </div>
+
+    <div class="portfolio-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/f43501_26file-0000000043648243b3b80966db018407.png"
+        alt="نمونه طراحی پوستر">
+
+      <div class="portfolio-caption">
+        🎨 طراحی پوستر تبلیغاتی
+      </div>
+
+    </div>
+
+    <div class="portfolio-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/ce3b01_26file-0000000023ac8246b14047ef6b693d7f.png"
+        alt="نمونه طراحی تبلیغ کیف زنانه">
+
+      <div class="portfolio-caption">
+        👜 طراحی تبلیغاتی کیف زنانه
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="slider-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+</section>
+
+
+<!-- ===== نمونه طراحی پروفایل ===== -->
+
+<section class="profile-portfolio">
+
+  <h2>👤 نمونه طراحی پروفایل</h2>
+
+  <p>
+    طراحی پروفایل حرفه‌ای برای پیج و کسب‌وکار شما
+  </p>
+
+  <div class="profile-slider">
+
+    <div class="profile-slide active">
+
+      <img
+        src="https://uploadkon.ir/uploads/ca8401_26IMG-20260801-203612-220.jpg"
+        alt="نمونه طراحی پروفایل">
+
+    </div>
+
+    <div class="profile-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/fa6c01_26IMG-20260801-203635-970.jpg"
+        alt="نمونه طراحی پروفایل">
+
+    </div>
+
+    <div class="profile-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/3ace01_26IMG-20260507-003653-359.jpg"
+        alt="نمونه طراحی پروفایل">
+
+    </div>
+
+    <div class="profile-slide">
+
+      <img
+        src="https://uploadkon.ir/uploads/053101_26IMG-20260801-204255-023.jpg"
+        alt="نمونه طراحی پروفایل">
+
+    </div>
+
+  </div>
+
+  <div class="profile-dots">
+
+    <span class="profile-dot active"></span>
+    <span class="profile-dot"></span>
+    <span class="profile-dot"></span>
+    <span class="profile-dot"></span>
+
+  </div>
+
+</section>
+
+
+<!-- ===== بنر سفارش ===== -->
+
+<div class="message-banner">
+
+  <strong>
+    📢 تبلیغ شما هم می‌تونه اینجا باشه!
+  </strong>
+
+  <span>
+    برای طراحی پوستر و تبلیغات به ما پیام دهید
+  </span>
+
+  <br>
+
+  <a
+    href="https://rubika.ir/kmkasra10"
+    target="_blank">
+
+    💬 پیام برای سفارش
+
+  </a>
+
+</div>
+
+
+<!-- ===== سفارش ===== -->
+
+<section class="order-section">
+
+  <h2>🚀 سفارش طراحی</h2>
+
+  <p>
+    برای طراحی پوستر، بنر، پروفایل
+    و محتوای تبلیغاتی با مالمیر در ارتباط باشید.
+  </p>
+
+  <a
+    class="phone"
+    href="tel:09189544700">
+
+    📞 09189544700
+
+  </a>
+
+  <a
+    class="rubika"
+    href="https://rubika.ir/kmkasra10"
+    target="_blank">
+
+    💬 سفارش از روبیکا
+
+  </a>
+
+</section>
+
+
+<!-- ===== فوتر ===== -->
+
+<footer>
+
+  طراحی و تبلیغات با
+  <strong>مالمیر</strong> ✨
+
+  <br>
+
+  📞 09189544700
+
+  <br>
+
+  📲 روبیکا: @kmkasra10
+
+</footer>
+
+
+<script>
+
+/* ===== اسلاید نمونه کارها ===== */
+
+let portfolioSlides =
+document.querySelectorAll(".portfolio-slide");
+
+let dots =
+document.querySelectorAll(".dot");
+
+let portfolioIndex = 0;
+
+setInterval(function(){
+
+  portfolioSlides[portfolioIndex].classList.remove("active");
+  dots[portfolioIndex].classList.remove("active");
+
+  portfolioIndex++;
+
+  if(portfolioIndex >= portfolioSlides.length){
+    portfolioIndex = 0;
+  }
+
+  portfolioSlides[portfolioIndex].classList.add("active");
+  dots[portfolioIndex].classList.add("active");
+
+},4000);
+
+
+/* ===== اسلاید پروفایل ===== */
+
+let profileSlides =
+document.querySelectorAll(".profile-slide");
+
+let profileDots =
+document.querySelectorAll(".profile-dot");
+
+let profileIndex = 0;
+
+setInterval(function(){
+
+  profileSlides[profileIndex].classList.remove("active");
+  profileDots[profileIndex].classList.remove("active");
+
+  profileIndex++;
+
+  if(profileIndex >= profileSlides.length){
+    profileIndex = 0;
+  }
+
+  profileSlides[profileIndex].classList.add("active");
+  profileDots[profileIndex].classList.add("active");
+
+},4000);
+
+</script>
+
+</body>
+</html>
