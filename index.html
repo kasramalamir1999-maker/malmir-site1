@@ -1,422 +1,464 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <title>طراحی پوستر و تبلیغات مالمیر</title>
-  <meta name="description" content="طراحی پوستر و تبلیغات مالمیر؛ طراحی پوستر تبلیغاتی و محتوای حرفه‌ای برای کسب‌وکارها.">
-</head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- تأیید مالکیت گوگل -->
-<meta name="google-site-verification" content="Vma4ZqtbckGCoeDnkVaoKhMaUFbtfWRUkPxRZ567onE" />
-
-<!-- سئو -->
-<title> <title>طراحی پوستر و تبلیغات مالمیر</title>
-<meta name="description" content="مالمیر؛ طراحی پوستر، بنر تبلیغاتی، پروفایل و محتوای تبلیغاتی حرفه‌ای برای کسب‌وکارها.">
+<title>طراحی سایت و برنامه مالمیر | طراحی پوستر و تبلیغات</title>
 
 <style>
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  color:#fff;
-  font-family:Tahoma,Arial,sans-serif;
-  font-size:18px;
-  background:
-    radial-gradient(circle at 50% 0%,#124b78 0%,#071a2b 35%,#03080e 100%);
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+background:#fff5e8;
+color:#432a18
 }
 
 header{
-  text-align:center;
-  padding:42px 15px;
-  background:linear-gradient(135deg,#061d32,#0b4d78,#061525);
-  border-bottom:2px solid #24aef5;
-  box-shadow:0 5px 30px rgba(0,160,255,.2);
+position:relative;
+text-align:center;
+padding:30px 15px;
+background:linear-gradient(135deg,#fff3d9,#ffd18e,#ffe9c7);
+border-radius:0 0 32px 32px;
+box-shadow:0 5px 20px #d77b2030
 }
 
 header h1{
-  margin:0;
-  font-size:44px;
-  font-weight:900;
-  color:#5acbff;
-  text-shadow:0 0 20px rgba(42,185,255,.35);
+margin:0;
+color:#8b4b00;
+font-size:29px
 }
 
 header p{
-  font-size:22px;
-  font-weight:bold;
-  line-height:1.8;
-  margin:12px 0 18px;
+margin:10px 0 0;
+color:#704000;
+font-weight:bold
 }
 
-.main-order{
-  display:inline-block;
-  padding:15px 30px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#26bbff,#0874c1);
-  color:white;
-  text-decoration:none;
-  font-size:21px;
-  font-weight:900;
-  box-shadow:0 7px 25px rgba(0,150,255,.3);
+/* منو */
+
+.menu-button{
+position:absolute;
+top:15px;
+left:15px;
+width:48px;
+height:48px;
+border:0;
+border-radius:50%;
+background:#fffaf2;
+color:#ed8500;
+font-size:30px;
+font-weight:bold;
+cursor:pointer
 }
 
-.quick-ads{
-  width:94%;
-  max-width:850px;
-  margin:25px auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+.menu{
+display:none;
+position:absolute;
+top:70px;
+left:12px;
+width:210px;
+padding:10px;
+z-index:1000;
+background:#fffaf3;
+border:2px solid #ffad3d;
+border-radius:22px;
+box-shadow:0 10px 30px #8d4b0030
 }
 
-.quick-ad{
-  display:block;
-  padding:15px 10px;
-  text-align:center;
-  border-radius:15px;
-  background:linear-gradient(135deg,#09243a,#0d4c75);
-  border:1px solid #168fd4;
-  color:white;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:900;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  transition:.25s;
+.menu.show{display:block}
+
+.menu-item{
+width:100%;
+margin:5px 0;
+padding:13px;
+border:2px solid #ffad3d;
+border-radius:30px;
+background:linear-gradient(135deg,#ffd18e,#ffad3d);
+color:#6c3500;
+font-family:inherit;
+font-weight:bold;
+font-size:15px;
+cursor:pointer
 }
 
-.quick-ad:hover{
-  transform:translateY(-3px);
-  border-color:#5acbff;
+/* عمومی */
+
+.container{
+width:min(1100px,94%);
+margin:20px auto
 }
 
-.quick-ad span{
-  display:block;
-  color:#5acbff;
-  font-size:21px;
-  margin-bottom:6px;
+.page{display:none}
+.page.active{display:block}
+
+.welcome{
+background:#fff;
+padding:18px;
+border-radius:23px;
+border-right:6px solid #ff9d24;
+margin-bottom:20px;
+box-shadow:0 6px 20px #8d4b0015;
+line-height:2
 }
 
-.mini-behesht-ad{
-  width:92%;
-  max-width:600px;
-  margin:22px auto;
-  padding:12px 15px;
-  display:flex;
-  align-items:center;
-  gap:15px;
-  background:linear-gradient(135deg,#071a2b,#0b4168,#082238);
-  border:2px solid #168bd0;
-  border-radius:17px;
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.35),
-    0 0 18px rgba(0,160,255,.12);
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:16px
 }
 
-.mini-behesht-ad img{
-  width:85px;
-  height:85px;
-  object-fit:cover;
-  border-radius:12px;
-  border:2px solid #45c5ff;
+.category{
+background:#fff;
+padding:18px;
+border-radius:23px;
+border:1px solid #ffe0b2;
+box-shadow:0 6px 20px #8d4b0015
 }
 
-.mini-behesht-info{
-  flex:1;
-  text-align:right;
+.category h2{
+color:#ed8500;
+margin-top:0
 }
 
-.mini-behesht-info b{
-  display:block;
-  color:#5bcaff;
-  font-size:21px;
-  font-weight:900;
+/* خدمات */
+
+.service{
+position:relative;
+background:#fff8ef;
+border:1px solid #ffd09a;
+border-radius:17px;
+padding:16px 45px 13px 13px;
+margin:10px 0
 }
 
-.mini-behesht-info span{
-  display:block;
-  margin-top:7px;
-  font-size:15px;
-  color:#eee;
-  line-height:1.7;
+.info-button{
+position:absolute;
+top:10px;
+left:10px;
+width:30px;
+height:30px;
+border:0;
+border-radius:50%;
+background:#ff9d24;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+cursor:pointer
 }
 
-.portfolio,
-.profile-portfolio{
-  width:94%;
-  max-width:850px;
-  margin:50px auto;
-  text-align:center;
+.price{
+display:inline-block;
+margin-top:7px;
+color:#e67500;
+font-weight:bold
 }
 
-.portfolio h2,
-.profile-portfolio h2{
-  margin:0;
-  font-size:35px;
-  color:#5acbff;
-  text-shadow:0 0 15px rgba(40,180,255,.25);
+.add,
+.info-add,
+.back,
+.pay{
+border:0;
+border-radius:15px;
+padding:11px 16px;
+background:#ff9d24;
+color:#fff;
+font-family:inherit;
+font-weight:bold;
+cursor:pointer
 }
 
-.portfolio p,
-.profile-portfolio p{
-  font-size:20px;
-  font-weight:bold;
-  color:#ddd;
-  margin:12px 0 25px;
+.add{
+display:block;
+margin-top:10px
 }
 
-.portfolio-slider,
-.profile-slider{
-  width:100%;
-  max-width:650px;
-  margin:auto;
-  overflow:hidden;
-  border-radius:23px;
-  border:2px solid #168bd0;
-  background:#06111c;
-  box-shadow:
-    0 12px 35px rgba(0,0,0,.5),
-    0 0 25px rgba(0,153,255,.12);
+/* عطر بهشت */
+
+.perfume-ad{
+text-align:center;
+padding:22px;
+margin-bottom:20px;
+border:3px solid #ffad3d;
+border-radius:25px;
+background:linear-gradient(135deg,#fff,#ffe0b0,#ffc46b);
+box-shadow:0 6px 20px #8d4b0015
 }
 
-.profile-slider{
-  max-width:600px;
+.perfume-ad h2{
+color:#d86d00;
+margin-top:0
 }
 
-.portfolio-slide,
-.profile-slide{
-  display:none;
-  animation:slideIn .7s ease;
+.perfume-ad p{
+line-height:2
 }
 
-.portfolio-slide.active,
-.profile-slide.active{
-  display:block;
+.perfume-button{
+display:inline-block;
+padding:12px 22px;
+border-radius:15px;
+background:#ed8500;
+color:#fff;
+text-decoration:none;
+font-weight:bold
 }
 
-.portfolio-slide img,
-.profile-slide img{
-  display:block;
-  width:100%;
-  height:390px;
-  object-fit:cover;
+/* اسلایدر */
+
+.slider{
+position:relative;
+height:300px;
+overflow:hidden;
+border-radius:20px;
+background:#fff4e5;
+border:2px solid #ffd19b
 }
 
-@keyframes slideIn{
-  from{
-    opacity:0;
-    transform:translateX(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
+.slide{
+display:none;
+width:100%;
+height:100%
 }
 
-.portfolio-caption{
-  padding:15px;
-  background:linear-gradient(135deg,#071b2c,#0b395c);
-  color:white;
-  font-size:21px;
-  font-weight:900;
+.slide.active{display:block}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:#fff
 }
 
-.slider-dots,
-.profile-dots{
-  text-align:center;
-  margin-top:14px;
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:44px;
+height:44px;
+border:0;
+border-radius:50%;
+background:#ff9d24;
+color:#fff;
+font-size:22px;
+font-weight:bold;
+cursor:pointer
 }
 
-.dot,
-.profile-dot{
-  display:inline-block;
-  width:11px;
-  height:11px;
-  margin:0 5px;
-  border-radius:50%;
-  background:#456579;
+.prev{left:10px}
+.next{right:10px}
+
+.slider-count{
+text-align:center;
+margin:10px;
+color:#c66a00;
+font-weight:bold
 }
 
-.dot.active,
-.profile-dot.active{
-  background:#35baff;
-  box-shadow:0 0 10px #35baff;
+/* سبد */
+
+.cart{
+margin-top:25px;
+padding:18px;
+background:#fff;
+border:3px solid #ffb347;
+border-radius:23px;
+box-shadow:0 6px 20px #8d4b0015
 }
 
-.message-banner{
-  width:92%;
-  max-width:700px;
-  margin:30px auto;
-  padding:18px;
-  text-align:center;
-  border-radius:18px;
-  background:linear-gradient(135deg,#082943,#0c5a8c,#082039);
-  border:1px solid #22aaf0;
-  box-shadow:0 7px 25px rgba(0,0,0,.3);
+.cart h2{
+color:#ed8500
 }
 
-.message-banner strong{
-  display:block;
-  font-size:23px;
-  color:#5bcaff;
-  margin-bottom:7px;
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+padding:13px 0;
+border-bottom:1px solid #ffe1bd
 }
 
-.message-banner span{
-  font-size:17px;
-  font-weight:bold;
-  color:#eee;
+.remove{
+border:0;
+border-radius:9px;
+padding:7px 10px;
+background:#ff6868;
+color:#fff;
+cursor:pointer
 }
 
-.message-banner a{
-  display:inline-block;
-  margin-top:12px;
-  padding:9px 18px;
-  background:#1199df;
-  border-radius:10px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+.total{
+margin:20px 0;
+font-size:20px;
+font-weight:bold;
+color:#e67500
 }
 
-.order-section{
-  width:94%;
-  max-width:700px;
-  margin:45px auto;
-  padding:30px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#071827,#0d3555,#07111b);
-  border:2px solid #168bd0;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
+.pay{
+width:100%;
+font-size:17px
 }
 
-.order-section h2{
-  margin-top:0;
-  font-size:32px;
-  color:#55c7ff;
+.payment{
+display:none;
+margin-top:18px;
+padding:18px;
+background:#fff4e5;
+border:2px solid #ffad3d;
+border-radius:18px;
+text-align:center
 }
 
-.order-section p{
-  font-size:20px;
-  font-weight:bold;
-  line-height:2;
+.card{
+direction:ltr;
+background:linear-gradient(135deg,#ffb347,#ff8b00);
+color:#fff;
+padding:18px;
+border-radius:15px;
+font-size:20px;
+font-weight:bold;
+letter-spacing:2px
 }
 
-.phone{
-  display:block;
-  color:white;
-  text-decoration:none;
-  font-size:25px;
-  font-weight:900;
-  margin:18px 0;
+/* توضیحات */
+
+.info-page{
+display:none;
+background:#fff;
+padding:25px 18px;
+border-radius:23px;
+box-shadow:0 6px 20px #8d4b0015
 }
 
-.rubika{
-  display:inline-block;
-  padding:15px 28px;
-  border-radius:15px;
-  background:linear-gradient(135deg,#25b8ff,#0878c9);
-  color:white;
-  text-decoration:none;
-  font-size:21px;
-  font-weight:900;
+.info-page.active{display:block}
+
+.info-page h2{
+text-align:center;
+color:#ed8500
+}
+
+.info-page p{
+line-height:2.3
+}
+
+.info-price{
+padding:15px;
+margin:20px 0;
+text-align:center;
+background:#fff4e5;
+border:2px solid #ffbd68;
+border-radius:15px;
+color:#df7200;
+font-weight:bold
+}
+
+.info-add{
+width:100%
+}
+
+/* صفحات */
+
+.page-box{
+background:#fff;
+padding:25px 18px;
+border-radius:23px;
+box-shadow:0 6px 20px #8d4b0015
+}
+
+.page-title{
+text-align:center;
+color:#ed8500
+}
+
+.phone-box{
+padding:18px;
+margin:12px 0;
+text-align:center;
+background:#fff7ed;
+border:2px solid #ffd09a;
+border-radius:18px
+}
+
+.phone-number{
+display:block;
+direction:ltr;
+font-size:20px;
+font-weight:bold;
+color:#df7200;
+margin:12px
+}
+
+.call{
+display:inline-block;
+padding:10px 20px;
+border-radius:13px;
+background:#ff9d24;
+color:#fff;
+text-decoration:none;
+font-weight:bold
+}
+
+.order{
+padding:14px;
+margin:10px 0;
+background:#fff7ed;
+border:1px solid #ffd09a;
+border-radius:15px
+}
+
+/* پیام داخل سایت */
+
+.message-box{
+display:none;
+position:fixed;
+z-index:99999;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:85%;
+max-width:380px;
+padding:25px 20px;
+background:#fffaf3;
+border:3px solid #ff9d24;
+border-radius:28px;
+box-shadow:0 12px 40px #00000035;
+text-align:center
+}
+
+.message-box.show{
+display:block
+}
+
+#messageText{
+color:#5a3518;
+font-size:17px;
+font-weight:bold;
+line-height:2;
+margin-bottom:18px
+}
+
+.message-box button{
+border:0;
+padding:11px 30px;
+border-radius:18px;
+background:#ff9d24;
+color:#fff;
+font-family:inherit;
+font-weight:bold;
+font-size:15px;
+cursor:pointer
 }
 
 footer{
-  text-align:center;
-  padding:28px 10px;
-  background:#03070c;
-  border-top:1px solid #168bd0;
-  font-size:18px;
-  font-weight:bold;
-  line-height:2;
+text-align:center;
+padding:30px 10px;
+color:#79502e;
+line-height:2
 }
-
-footer strong{color:#55c7ff}
-
-@media(max-width:650px){
-
-  header{padding:32px 12px}
-
-  header h1{font-size:35px}
-
-  header p{font-size:18px}
-
-  .main-order{
-    font-size:19px;
-    padding:13px 22px;
-  }
-
-  .quick-ads{
-    grid-template-columns:1fr;
-    width:90%;
-  }
-
-  .quick-ad{padding:13px}
-
-  .mini-behesht-ad{
-    width:94%;
-    padding:10px;
-  }
-
-  .mini-behesht-ad img{
-    width:75px;
-    height:75px;
-  }
-
-  .mini-behesht-info b{
-    font-size:18px;
-  }
-
-  .mini-behesht-info span{
-    font-size:13px;
-  }
-
-  .portfolio h2,
-  .profile-portfolio h2{
-    font-size:29px;
-  }
-
-  .portfolio p,
-  .profile-portfolio p{
-    font-size:18px;
-  }
-
-  .portfolio-slide img,
-  .profile-slide img{
-    height:340px;
-  }
-
-  .portfolio-caption{
-    font-size:19px;
-    padding:13px;
-  }
-
-  .order-section h2{font-size:28px}
-
-  .order-section p{font-size:18px}
-}
-
-@media(max-width:400px){
-
-  .mini-behesht-ad img{
-    width:68px;
-    height:68px;
-  }
-
-  .mini-behesht-info b{
-    font-size:16px;
-  }
-
-  .mini-behesht-info span{
-    font-size:11px;
-  }
-}
-
 </style>
 </head>
 
@@ -424,318 +466,1208 @@ footer strong{color:#55c7ff}
 
 <header>
 
-<h1>✨ مالمیر ✨</h1>
+<button class="menu-button" onclick="toggleMenu()">⋮</button>
 
-<p>
-طراحی پوستر و تبلیغات حرفه‌ای برای کسب‌وکار شما
-</p>
+<div class="menu" id="menu">
 
-<a
-class="main-order"
-href="https://rubika.ir/kmkasra10"
-target="_blank">
+<button class="menu-item" onclick="openCart()">
+🛒 سبد خرید
+</button>
 
-📲 ثبت سفارش در روبیکا
+<button class="menu-item" onclick="openSupport()">
+🎧 پشتیبانی
+</button>
 
-</a>
+<button class="menu-item" onclick="openOrders()">
+📦 سفارشات من
+</button>
+
+</div>
+
+<h1>طراحی سایت و برنامه مالمیر</h1>
+
+<p>طراحی پوستر و تبلیغات حرفه‌ای</p>
 
 </header>
 
-<div class="quick-ads">
 
-<a class="quick-ad"
-href="https://rubika.ir/kmkasra10"
-target="_blank">
+<div class="container">
 
-<span>📢</span>
-تبلیغ شما؟
-<br>
-برای تبلیغ پیام دهید
+<!-- صفحه اصلی -->
 
-</a>
+<section id="homePage" class="page active">
 
-<a class="quick-ad"
-href="https://rubika.ir/kmkasra10"
-target="_blank">
+<div class="welcome">
 
-<span>🎨</span>
-پوستر لازم داری؟
-<br>
-سفارش دهید
+✨ <b>به سایت مالمیر خوش آمدید</b><br>
 
-</a>
-
-<a class="quick-ad"
-href="https://rubika.ir/kmkasra10"
-target="_blank">
-
-<span>✨</span>
-طراحی اختصاصی
-<br>
-برای کسب‌وکار شما
-
-</a>
+طراحی سایت و برنامه، طراحی پوستر و پروفایل،
+تبلیغات و خدمات امنیتی.
 
 </div>
 
-<div class="mini-behesht-ad">
 
-<img
-src="https://uploadkon.ir/uploads/5ec901_2617856007292704261663286715707238.jpg"
-alt="عطر بهشت">
+<!-- عطر بهشت -->
 
-<div class="mini-behesht-info">
+<div class="perfume-ad">
 
-<b>✨ عطر بهشت</b>
-
-<span>
-عطر و ادکلن | نهاوند
-<br>
-📍 خیابان ابوذر، روبه‌روی بانک ملت
-</span>
-
-</div>
-
-</div>
-
-<section class="portfolio">
-
-<h2>🎨 نمونه طراحی‌های تبلیغاتی</h2>
-
-<p>چند نمونه از طراحی‌های مالمیر</p>
-
-<div class="portfolio-slider">
-
-<div class="portfolio-slide active">
-
-<img
-src="https://uploadkon.ir/uploads/a03c01_26گردشگری-ارزان-برای-سایت.jpg"
-alt="نمونه طراحی تبلیغ گردشگری">
-
-<div class="portfolio-caption">
-🏞️ طراحی تبلیغ گردشگری
-</div>
-
-</div>
-
-<div class="portfolio-slide">
-
-<img
-src="https://uploadkon.ir/uploads/f40b01_26Dairy-advertising-tract0310-cafeegraphic.jpg"
-alt="نمونه طراحی تبلیغ لبنیاتی">
-
-<div class="portfolio-caption">
-🥛 طراحی تبلیغاتی لبنیاتی
-</div>
-
-</div>
-
-<div class="portfolio-slide">
-
-<img
-src="https://uploadkon.ir/uploads/f43501_26file-0000000043648243b3b80966db018407.png"
-alt="نمونه طراحی پوستر">
-
-<div class="portfolio-caption">
-🎨 طراحی پوستر تبلیغاتی
-</div>
-
-</div>
-
-<div class="portfolio-slide">
-
-<img
-src="https://uploadkon.ir/uploads/ce3b01_26file-0000000023ac8246b14047ef6b693d7f.png"
-alt="نمونه طراحی تبلیغ کیف زنانه">
-
-<div class="portfolio-caption">
-👜 طراحی تبلیغاتی کیف زنانه
-</div>
-
-</div>
-
-</div>
-
-<div class="slider-dots">
-
-<span class="dot active"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-
-</div>
-
-</section>
-
-<section class="profile-portfolio">
-
-<h2>👤 نمونه طراحی پروفایل</h2>
+<h2>🌸 عطر بهشت 🌸</h2>
 
 <p>
-طراحی پروفایل حرفه‌ای برای پیج و کسب‌وکار شما
-</p>
-
-<div class="profile-slider">
-
-<div class="profile-slide active">
-
-<img
-src="https://uploadkon.ir/uploads/ca8401_26IMG-20260801-203612-220.jpg"
-alt="نمونه طراحی پروفایل">
-
-</div>
-
-<div class="profile-slide">
-
-<img
-src="https://uploadkon.ir/uploads/fa6c01_26IMG-20260801-203635-970.jpg"
-alt="نمونه طراحی پروفایل">
-
-</div>
-
-<div class="profile-slide">
-
-<img
-src="https://uploadkon.ir/uploads/3ace01_26IMG-20260507-003653-359.jpg"
-alt="نمونه طراحی پروفایل">
-
-</div>
-
-<div class="profile-slide">
-
-<img
-src="https://uploadkon.ir/uploads/053101_26IMG-20260801-204255-023.jpg"
-alt="نمونه طراحی پروفایل">
-
-</div>
-
-</div>
-
-<div class="profile-dots">
-
-<span class="profile-dot active"></span>
-<span class="profile-dot"></span>
-<span class="profile-dot"></span>
-<span class="profile-dot"></span>
-
-</div>
-
-</section>
-
-<div class="message-banner">
-
-<strong>
-📢 تبلیغ شما هم می‌تونه اینجا باشه!
-</strong>
-
-<span>
-برای طراحی پوستر و تبلیغات به ما پیام دهید
-</span>
-
-<br>
-
-<a
-href="https://rubika.ir/kmkasra10"
-target="_blank">
-
-💬 پیام برای سفارش
-
-</a>
-
-</div>
-
-<section class="order-section">
-
-<h2>🚀 سفارش طراحی</h2>
-
-<p>
-برای طراحی پوستر، بنر، پروفایل
-و محتوای تبلیغاتی با مالمیر در ارتباط باشید.
+عطر و ادکلن‌های جذاب برای سلیقه‌های خاص ✨<br>
+برای مشاهده محصولات عطر بهشت همراه ما باشید.
 </p>
 
 <a
-class="phone"
-href="tel:09189544700">
-
-📞 09189544700
-
-</a>
-
-<a
-class="rubika"
-href="https://rubika.ir/kmkasra10"
+class="perfume-button"
+href="https://www.instagram.com/behesht_parfume_nahavand"
 target="_blank">
 
-💬 سفارش از روبیکا
+📸 مشاهده عطر بهشت
 
 </a>
 
+</div>
+
+
+<div class="categories">
+
+
+<!-- خدمات سایبری -->
+
+<div class="category">
+
+<h2>🛡️ خدمات سایبری و امنیت</h2>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('accountInfo')">!</button>
+
+<b>امن‌سازی حساب</b><br>
+
+<span class="price">
+200,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('امن‌سازی حساب',200000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('cameraInfo')">!</button>
+
+<b>امنیت دوربین مدار بسته</b><br>
+
+<span class="price">
+600,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('امنیت دوربین مدار بسته',600000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('cardInfo')">!</button>
+
+<b>امنیت حساب و کارت بانکی</b><br>
+
+<span class="price">
+400,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('امنیت حساب و کارت بانکی',400000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('cyberInfo')">!</button>
+
+<b>خدمات سایبری</b><br>
+
+<span class="price">
+500,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('خدمات سایبری',500000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- طراحی برنامه -->
+
+<div class="category">
+
+<h2>📱 طراحی برنامه</h2>
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('appInfo')">!</button>
+
+<b>ساخت برنامه اختصاصی</b><br>
+
+<span class="price">
+2,000,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('ساخت برنامه اختصاصی',2000000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- طراحی سایت -->
+
+<div class="category">
+
+<h2>🌐 طراحی سایت</h2>
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('siteInfo')">!</button>
+
+<b>طراحی سایت اختصاصی</b><br>
+
+<span class="price">
+3,000,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('طراحی سایت اختصاصی',3000000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- نمونه پوستر -->
+
+<div class="category">
+
+<h2>📢 نمونه پوستر تبلیغاتی</h2>
+
+<div class="slider" id="posterSlider">
+
+<div class="slide active">
+<img src="https://uploadkon.ir/uploads/3ac402_26images.jpeg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/e75b02_26nahaei-01123-.jpg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/e1c402_26market-11.jpg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/a84202_26گردشگری-ارزان-برای-سایت.jpg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/5c6f02_26Dairy-advertising-tract0310-cafeegraphic.jpg">
+</div>
+
+<button class="slider-btn prev"
+onclick="changeSlide('poster',-1)">
+❮
+</button>
+
+<button class="slider-btn next"
+onclick="changeSlide('poster',1)">
+❯
+</button>
+
+</div>
+
+<div class="slider-count" id="posterCount">
+1 / 5
+</div>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('posterInfo')">
+!
+</button>
+
+<b>طراحی پوستر تبلیغاتی</b><br>
+
+<span class="price">
+300,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('طراحی پوستر تبلیغاتی',300000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- نمونه پروفایل -->
+
+<div class="category">
+
+<h2>👤 نمونه پروفایل</h2>
+
+<div class="slider" id="profileSlider">
+
+<div class="slide active">
+<img src="https://uploadkon.ir/uploads/420802_26IMG-20260801-204255-023.jpg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/d5e602_26IMG-20260801-203612-220.jpg">
+</div>
+
+<div class="slide">
+<img src="https://uploadkon.ir/uploads/a39502_26IMG-20260801-203635-970.jpg">
+</div>
+
+<button class="slider-btn prev"
+onclick="changeSlide('profile',-1)">
+❮
+</button>
+
+<button class="slider-btn next"
+onclick="changeSlide('profile',1)">
+❯
+</button>
+
+</div>
+
+<div class="slider-count" id="profileCount">
+1 / 3
+</div>
+
+
+<div class="service">
+
+<button class="info-button"
+onclick="openInfo('profileInfo')">
+!
+</button>
+
+<b>طراحی پروفایل</b><br>
+
+<span class="price">
+200,000 تومان
+</span>
+
+<button class="add"
+onclick="addToCart('طراحی پروفایل',200000)">
+
+افزودن به سبد 🛒
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- سبد خرید -->
+
+<div class="cart" id="cart">
+
+<h2>🛒 سبد خرید</h2>
+
+<div id="cartItems">
+سبد خرید خالی است.
+</div>
+
+<div class="total">
+
+جمع کل:
+
+<span id="total">0</span>
+
+تومان
+
+</div>
+
+<button class="pay"
+onclick="showPayment()">
+
+💳 پرداخت
+
+</button>
+
+
+<div class="payment" id="payment">
+
+<h3>💳 پرداخت کارت‌به‌کارت</h3>
+
+<p>
+مبلغ سفارش را به شماره کارت زیر انتقال دهید:
+</p>
+
+<div class="card">
+5022 2915 3683 4888
+</div>
+
+<p>
+پس از پرداخت، جهت تأیید سفارش با پشتیبانی تماس بگیرید.
+</p>
+
+<button class="add" onclick="copyCard()">
+📋 کپی شماره کارت
+</button>
+
+<button class="add" onclick="saveOrder()">
+✅ ثبت سفارش پس از پرداخت
+</button>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- توضیحات خدمات -->
+
+<section id="accountInfo" class="info-page">
+
+<h2>🛡️ امن‌سازی حساب</h2>
+
+<p>
+تنظیمات امنیتی حساب بررسی می‌شود و نکات لازم برای رمز عبور قوی،
+تأیید دومرحله‌ای و کاهش خطر ورود غیرمجاز آموزش داده می‌شود.
+</p>
+
+<div class="info-price">
+قیمت: 200,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('امن‌سازی حساب',200000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="cameraInfo" class="info-page">
+
+<h2>📹 امنیت دوربین مدار بسته</h2>
+
+<p>
+بررسی تنظیمات امنیتی دوربین‌های مدار بسته، رمزهای مدیریتی،
+دسترسی‌های شبکه و نکات لازم برای کاهش خطر دسترسی افراد غیرمجاز.
+</p>
+
+<div class="info-price">
+قیمت: 600,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('امنیت دوربین مدار بسته',600000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="cardInfo" class="info-page">
+
+<h2>💳 امنیت حساب و کارت بانکی</h2>
+
+<p>
+آموزش نکات امنیتی برای محافظت بهتر از اطلاعات بانکی،
+رمزها، پیامک‌های بانکی و شناسایی روش‌های رایج فیشینگ و کلاهبرداری اینترنتی.
+</p>
+
+<div class="info-price">
+قیمت: 400,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('امنیت حساب و کارت بانکی',400000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="cyberInfo" class="info-page">
+
+<h2>💻 خدمات سایبری</h2>
+
+<p>
+خدمات و راهنمایی‌های عمومی در زمینه امنیت دیجیتال،
+محافظت از حساب‌ها، شناخت تهدیدهای اینترنتی و افزایش امنیت فضای آنلاین.
+</p>
+
+<div class="info-price">
+قیمت: 500,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('خدمات سایبری',500000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="appInfo" class="info-page">
+
+<h2>📱 طراحی برنامه</h2>
+
+<p>
+طراحی و ساخت برنامه اختصاصی متناسب با نیاز شما؛
+از ایده اولیه و طراحی ظاهر برنامه تا پیاده‌سازی قابلیت‌های موردنظر.
+</p>
+
+<div class="info-price">
+قیمت پایه: 2,000,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('ساخت برنامه اختصاصی',2000000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="siteInfo" class="info-page">
+
+<h2>🌐 طراحی سایت</h2>
+
+<p>
+طراحی سایت اختصاصی با ظاهر مدرن و مناسب موبایل،
+شامل طراحی صفحات، خدمات، نمونه‌کارها و امکانات موردنیاز.
+</p>
+
+<div class="info-price">
+قیمت پایه: 3,000,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('طراحی سایت اختصاصی',3000000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="posterInfo" class="info-page">
+
+<h2>📢 طراحی پوستر تبلیغاتی</h2>
+
+<p>
+طراحی پوستر تبلیغاتی برای معرفی کسب‌وکار، محصول،
+تخفیف، خدمات و تبلیغات در شبکه‌های اجتماعی.
+</p>
+
+<div class="info-price">
+قیمت: 300,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('طراحی پوستر تبلیغاتی',300000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<section id="profileInfo" class="info-page">
+
+<h2>👤 طراحی پروفایل</h2>
+
+<p>
+طراحی تصویر پروفایل اختصاصی و حرفه‌ای برای پیج‌ها،
+کانال‌ها، کسب‌وکارها و برندهای شخصی.
+</p>
+
+<div class="info-price">
+قیمت: 200,000 تومان
+</div>
+
+<button class="info-add"
+onclick="addToCart('طراحی پروفایل',200000)">
+افزودن به سبد خرید 🛒
+</button>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</section>
+
+
+<!-- پشتیبانی -->
+
+<section id="supportPage" class="page">
+
+<div class="page-box">
+
+<h2 class="page-title">
+🎧 پشتیبانی مالمیر
+</h2>
+
+<p>
+برای پیگیری سفارش یا دریافت راهنمایی با ما تماس بگیرید.
+</p>
+
+<div class="phone-box">
+
+📱 شماره همراه
+
+<span class="phone-number">
+09189544700
+</span>
+
+<a class="call" href="tel:09189544700">
+📞 تماس
+</a>
+
+</div>
+
+
+<div class="phone-box">
+
+☎️ تلفن ثابت
+
+<span class="phone-number">
+081-33265125
+</span>
+
+<a class="call" href="tel:08133265125">
+📞 تماس
+</a>
+
+</div>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</div>
+
+</section>
+
+
+<!-- سفارشات -->
+
+<section id="ordersPage" class="page">
+
+<div class="page-box">
+
+<h2 class="page-title">
+📦 سفارشات من
+</h2>
+
+<div id="ordersList">
+هنوز سفارشی ثبت نشده است.
+</div>
+
+<button class="back" onclick="goHome()">
+⬅️ بازگشت
+</button>
+
+</div>
+
+</section>
+
+</div>
+
 
 <footer>
 
-طراحی و تبلیغات با
-<strong>مالمیر</strong> ✨
+طراحی سایت و برنامه مالمیر | طراحی پوستر و تبلیغات 🧡
 
 <br>
 
-📞 09189544700
-
-<br>
-
-📲 روبیکا: @kmkasra10
+آخرین بروزرسانی:
+۱۴۰۵/۰۵/۱۱ | 2026/08/02
 
 </footer>
 
+
+<!-- پیام داخلی سایت -->
+
+<div id="messageBox" class="message-box">
+
+<div id="messageText"></div>
+
+<button onclick="closeMessage()">
+باشه
+</button>
+
+</div>
+
+
 <script>
 
-let portfolioSlides =
-document.querySelectorAll(".portfolio-slide");
+let cart=
+JSON.parse(
+localStorage.getItem("malmirCart")||"[]"
+);
 
-let dots =
-document.querySelectorAll(".dot");
 
-let portfolioIndex = 0;
+/* ذخیره سبد */
 
-setInterval(function(){
+function saveCart(){
 
-portfolioSlides[portfolioIndex].classList.remove("active");
-dots[portfolioIndex].classList.remove("active");
+localStorage.setItem(
+"malmirCart",
+JSON.stringify(cart)
+);
 
-portfolioIndex++;
-
-if(portfolioIndex >= portfolioSlides.length){
-portfolioIndex = 0;
 }
 
-portfolioSlides[portfolioIndex].classList.add("active");
-dots[portfolioIndex].classList.add("active");
 
-},4000);
+/* پیام داخلی */
 
-let profileSlides =
-document.querySelectorAll(".profile-slide");
+function showMessage(text){
 
-let profileDots =
-document.querySelectorAll(".profile-dot");
+document.getElementById("messageText")
+.innerHTML=text;
 
-let profileIndex = 0;
+document.getElementById("messageBox")
+.classList.add("show");
 
-setInterval(function(){
-
-profileSlides[profileIndex].classList.remove("active");
-profileDots[profileIndex].classList.remove("active");
-
-profileIndex++;
-
-if(profileIndex >= profileSlides.length){
-profileIndex = 0;
 }
 
-profileSlides[profileIndex].classList.add("active");
-profileDots[profileIndex].classList.add("active");
+function closeMessage(){
 
-},4000);
+document.getElementById("messageBox")
+.classList.remove("show");
+
+}
+
+
+/* منو */
+
+function toggleMenu(){
+
+document.getElementById("menu")
+.classList.toggle("show");
+
+}
+
+function closeMenu(){
+
+document.getElementById("menu")
+.classList.remove("show");
+
+}
+
+
+/* افزودن */
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+saveCart();
+updateCart();
+
+showMessage(
+"✅ این خدمت با موفقیت به سبد خرید اضافه شد 🛒"
+);
+
+}
+
+
+/* بروزرسانی */
+
+function updateCart(){
+
+let box=
+document.getElementById("cartItems");
+
+let total=0;
+
+if(cart.length===0){
+
+box.innerHTML=
+"سبد خرید خالی است.";
+
+}else{
+
+box.innerHTML="";
+
+cart.forEach((item,index)=>{
+
+total+=item.price;
+
+box.innerHTML+=`
+
+<div class="cart-item">
+
+<span>
+
+<b>${item.name}</b>
+
+<br>
+
+${item.price.toLocaleString("en-US")} تومان
+
+</span>
+
+<button
+class="remove"
+onclick="removeItem(${index})">
+
+❌
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+document.getElementById("total")
+.textContent=
+total.toLocaleString("en-US");
+
+}
+
+
+/* حذف */
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+saveCart();
+updateCart();
+
+showMessage(
+"🗑️ محصول از سبد خرید حذف شد."
+);
+
+}
+
+
+/* مخفی صفحات */
+
+function hidePages(){
+
+document
+.querySelectorAll(".page")
+.forEach(x=>{
+x.classList.remove("active")
+});
+
+document
+.querySelectorAll(".info-page")
+.forEach(x=>{
+x.classList.remove("active")
+});
+
+}
+
+
+/* خانه */
+
+function goHome(){
+
+hidePages();
+
+document
+.getElementById("homePage")
+.classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* توضیحات */
+
+function openInfo(id){
+
+hidePages();
+
+document
+.getElementById(id)
+.classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* سبد */
+
+function openCart(){
+
+closeMenu();
+goHome();
+
+setTimeout(()=>{
+
+document
+.getElementById("cart")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+},100);
+
+}
+
+
+/* پشتیبانی */
+
+function openSupport(){
+
+closeMenu();
+
+hidePages();
+
+document
+.getElementById("supportPage")
+.classList.add("active");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* سفارشات */
+
+function openOrders(){
+
+closeMenu();
+
+hidePages();
+
+document
+.getElementById("ordersPage")
+.classList.add("active");
+
+showOrders();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* پرداخت */
+
+function showPayment(){
+
+if(cart.length===0){
+
+showMessage(
+"❌ سبد خرید شما خالی است."
+);
+
+return;
+
+}
+
+document
+.getElementById("payment")
+.style.display="block";
+
+}
+
+
+/* کپی کارت */
+
+function copyCard(){
+
+navigator.clipboard
+.writeText("5022291536834888")
+.then(()=>{
+
+showMessage(
+"✅ شماره کارت با موفقیت کپی شد."
+);
+
+})
+.catch(()=>{
+
+showMessage(
+"شماره کارت:<br><br><b>5022291536834888</b>"
+);
+
+});
+
+}
+
+
+/* ثبت سفارش */
+
+function saveOrder(){
+
+if(cart.length===0){
+
+showMessage(
+"❌ سبد خرید شما خالی است."
+);
+
+return;
+
+}
+
+let total=
+cart.reduce(
+(sum,item)=>sum+item.price,
+0
+);
+
+let orders=
+JSON.parse(
+localStorage.getItem("malmirOrders")||"[]"
+);
+
+let order={
+
+id:
+Date.now()
+.toString()
+.slice(-6),
+
+total:total,
+
+date:
+new Date()
+.toLocaleDateString("fa-IR")
+
+};
+
+orders.push(order);
+
+localStorage.setItem(
+"malmirOrders",
+JSON.stringify(orders)
+);
+
+cart=[];
+
+saveCart();
+updateCart();
+
+document
+.getElementById("payment")
+.style.display="none";
+
+showMessage(
+"✅ سفارش شما ثبت شد.<br><br>برای تأیید پرداخت با پشتیبانی تماس بگیرید."
+);
+
+}
+
+
+/* سفارشات */
+
+function showOrders(){
+
+let orders=
+JSON.parse(
+localStorage.getItem("malmirOrders")||"[]"
+);
+
+let box=
+document.getElementById("ordersList");
+
+if(orders.length===0){
+
+box.innerHTML=
+"هنوز سفارشی ثبت نشده است.";
+
+return;
+
+}
+
+box.innerHTML="";
+
+orders.forEach(order=>{
+
+box.innerHTML+=`
+
+<div class="order">
+
+📦 شماره سفارش:
+<b>${order.id}</b>
+
+<br><br>
+
+💰 مبلغ:
+<b>
+${order.total.toLocaleString("en-US")}
+تومان
+</b>
+
+<br><br>
+
+📅 تاریخ:
+${order.date}
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* اسلایدر */
+
+let posterIndex=0;
+let profileIndex=0;
+
+function changeSlide(type,direction){
+
+let slider=
+document.getElementById(
+type==="poster"
+?"posterSlider"
+:"profileSlider"
+);
+
+let slides=
+slider.querySelectorAll(".slide");
+
+let index=
+type==="poster"
+?posterIndex
+:profileIndex;
+
+index+=direction;
+
+if(index>=slides.length)
+index=0;
+
+if(index<0)
+index=slides.length-1;
+
+slides.forEach(x=>{
+x.classList.remove("active")
+});
+
+slides[index]
+.classList.add("active");
+
+document
+.getElementById(
+type==="poster"
+?"posterCount"
+:"profileCount"
+)
+.textContent=
+(index+1)+" / "+slides.length;
+
+if(type==="poster")
+posterIndex=index;
+else
+profileIndex=index;
+
+}
+
+
+/* شروع */
+
+updateCart();
 
 </script>
 
