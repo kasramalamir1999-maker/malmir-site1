@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورود | مالمیر</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    border-radius: 22px;
+    background: linear-gradient(135deg,#f97316,#fb923c);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 18px 0 8px;
+    color: #075985;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: 2px solid #e5e7eb;
+    border-radius: 14px;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+}
+
+input:focus {
+    border-color: #0ea5e9;
+}
+
+.code {
+    direction: ltr;
+    letter-spacing: 10px;
+    font-size: 24px;
+}
+
+button {
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    border-radius: 14px;
+    margin-top: 12px;
+    background: #f97316;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.back {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #16a34a;
+}
+
+.error {
+    color: #dc2626;
+}
+
+.user-box {
+    background: #f0f9ff;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #075985;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">M</div>
+
+    <h1>مالمیر</h1>
+    <div class="subtitle">ورود امن به حساب کاربری</div>
+
+    <!-- مرحله اول -->
+    <div class="step active" id="step1">
+
+        <h3>شماره موبایل خود را وارد کنید</h3>
+
+        <input
+            id="phone"
+            type="tel"
+            inputmode="numeric"
+            maxlength="11"
+            placeholder="مثلاً 09123456789"
+        >
+
+        <button onclick="sendCode()">
+            ارسال کد تأیید
+        </button>
+
+        <div id="msg1" class="message"></div>
+
+    </div>
+
+
+    <!-- مرحله دوم -->
+    <div class="step" id="step2">
+
+        <h3>کد تأیید را وارد کنید</h3>
+
+        <p id="sentPhone"></p>
+
+        <input
+            id="code"
+            class="code"
+            type="tel"
+            inputmode="numeric"
+            maxlength="6"
+            placeholder="______"
+        >
+
+        <button onclick="verifyCode()">
+            تأیید و ادامه
+        </button>
+
+        <button class="back" onclick="backToPhone()">
+            تغییر شماره
+        </button>
+
+        <div id="msg2" class="message"></div>
+
+    </div>
+
+
+    <!-- مرحله سوم -->
+    <div class="step" id="step3">
+
+        <h3>تکمیل حساب کاربری</h3>
+
+        <input
+            id="name"
+            type="text"
+            placeholder="نام و نام خانوادگی"
+        >
+
+        <button onclick="finishRegister()">
+            تکمیل ثبت‌نام
+        </button>
+
+        <div id="msg3" class="message"></div>
+
+    </div>
+
+
+    <!-- مرحله چهارم -->
+    <div class="step" id="step4">
+
+        <h2>🎉 خوش آمدی!</h2>
+
+        <div class="user-box">
+            <div id="welcome"></div>
+            <div id="userPhone"></div>
+        </div>
+
+        <button onclick="logout()">
+            خروج از حساب
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let generatedCode = "";
+let userPhone = "";
+
+function showStep(number) {
+
+    document.querySelectorAll(".step").forEach(step => {
+        step.classList.remove("active");
+    });
+
+    document.getElementById("step" + number)
+        .classList.add("active");
+}
+
+
+function sendCode() {
+
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!/^09\d{9}$/.test(phone)) {
+
+        document.getElementById("msg1").innerHTML =
+            '<span class="error">شماره موبایل صحیح نیست.</span>';
+
+        return;
+    }
+
+    userPhone = phone;
+
+    // دمو:
+    generatedCode =
+        Math.floor(100000 + Math.random() * 900000).toString();
+
+    console.log("کد دمو:", generatedCode);
+
+    document.getElementById("sentPhone").innerText =
+        "کد برای " + phone + " ارسال شد.";
+
+    document.getElementById("msg1").innerText =
+        "کد تأیید ایجاد شد.";
+
+    showStep(2);
+
+}
+
+
+function verifyCode() {
+
+    const enteredCode =
+        document.getElementById("code").value.trim();
+
+    if (enteredCode === generatedCode) {
+
+        showStep(3);
+
+    } else {
+
+        document.getElementById("msg2").innerHTML =
+            '<span class="error">کد وارد شده اشتباه است.</span>';
+
+    }
+
+}
+
+
+function backToPhone() {
+
+    showStep(1);
+
+}
+
+
+function finishRegister() {
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    if (name.length < 3) {
+
+        document.getElementById("msg3").innerHTML =
+            '<span class="error">لطفاً نام و نام خانوادگی را وارد کنید.</span>';
+
+        return;
+    }
+
+    localStorage.setItem("malmir_name", name);
+    localStorage.setItem("malmir_phone", userPhone);
+
+    document.getElementById("welcome").innerText =
+        "سلام " + name + " 👋";
+
+    document.getElementById("userPhone").innerText =
+        "شماره: " + userPhone;
+
+    showStep(4);
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem("malmir_name");
+    localStorage.removeItem("malmir_phone");
+
+    location.reload();
+
+}
+
+
+window.onload = function() {
+
+    const savedName =
+        localStorage.getItem("malmir_name");
+
+    const savedPhone =
+        localStorage.getItem("malmir_phone");
+
+    if (savedName && savedPhone) {
+
+        userPhone = savedPhone;
+
+        document.getElementById("welcome").innerText =
+            "سلام " + savedName + " 👋";
+
+        document.getElementById("userPhone").innerText =
+            "شماره: " + savedPhone;
+
+        showStep(4);
+    }
+
+};
+
+</script>
+
+</body>
+  </html>
